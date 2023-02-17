@@ -1,0 +1,11 @@
+{% extends "testapp/layout.html" %}
+
+{% block body %}
+    <h1>Bike Santiago Info</h1>
+    <p>Total number of bikes: {{ data.network.stations|length }}</p>
+    <ul>
+    {% for station in data.network.stations %}
+        <li>{{ station.name }} - {{ station.free_bikes }} bikes available</li>
+    {% endfor %}
+    </ul>
+{% endblock %}

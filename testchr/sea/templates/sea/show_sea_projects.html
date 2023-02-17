@@ -1,0 +1,37 @@
+{% extends "sea/layout.html" %}
+
+{% block body %}
+    <h1>Proyectos</h1>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Tipo</th>
+                <th scope="col">Región</th>
+                <th scope="col">Tipología</th>
+                <th scope="col">Titular</th>
+                <th scope="col">Inversión (MMU$)</th>
+                <th scope="col">Fecha de Presentación Fecha de Ingreso</th>
+                <th scope="col">Estado</th>
+                <th scope="col">Mapa</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for sea_proyect in sea_proyects %}
+            <tr>
+                <td scope="row">{{ sea_proyect.id }}</td>
+                <td>{{ sea_proyect.nombre }}</td>
+                <td>{{ sea_proyect.tipo }}</td>
+                <td>{{ sea_proyect.region }}</td>
+                <td>{{ sea_proyect.topologia }}</td>
+                <td>{{ sea_proyect.titular }}</td>
+                <td>{{ sea_proyect.inversion }}</td>
+                <td>{{ sea_proyect.fecha_presentacion_ingreso }}</td>
+                <td>{{ sea_proyect.estado }}</td>
+                <td>{{ sea_proyect.mapa }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

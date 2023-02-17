@@ -1,0 +1,55 @@
+{% extends "testapp/layout.html" %}
+
+{% block body %}
+    <h1>Bike Stations Info</h1>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">id</th>
+                <th scope="col">uuid</th>
+                <th scope="col">name</th>
+                <th scope="col">latitude</th>
+                <th scope="col">longitude</th>
+                <th scope="col">free_bikes</th>
+                <th scope="col">address</th>
+                <th scope="col">altitude</th>
+                <th scope="col">ebikes</th>
+                <th scope="col">has_ebikes</th>
+                <th scope="col">last_updated</th>
+                <th scope="col">normal_bikes</th>
+                <th scope="col">payment</th>
+                <th scope="col">payment_terminal</th>
+                <th scope="col">post_code</th>
+                <th scope="col">renting</th>
+                <th scope="col">returning</th>
+                <th scope="col">slots</th>
+                <th scope="col">uid</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for bike_station in bike_stations %}
+            <tr>
+                <td scope="row">{{ bike_station.id }}</td>
+                <td>{{ bike_station.uuid }}</td>
+                <td>{{ bike_station.name }}</td>
+                <td>{{ bike_station.latitude }}</td>
+                <td>{{ bike_station.longitude }}</td>
+                <td>{{ bike_station.free_bikes }}</td>
+                <td>{{ bike_station.address }}</td>
+                <td>{{ bike_station.altitude }}</td>
+                <td>{{ bike_station.ebikes }}</td>
+                <td>{{ bike_station.has_ebikes }}</td>
+                <td>{{ bike_station.last_updated }}</td>
+                <td>{{ bike_station.normal_bikes }}</td>
+                <td>{{ bike_station.payment }}</td>
+                <td>{{ bike_station.payment_terminal }}</td>
+                <td>{{ bike_station.post_code }}</td>
+                <td>{{ bike_station.renting }}</td>
+                <td>{{ bike_station.returning }}</td>
+                <td>{{ bike_station.slots }}</td>
+                <td>{{ bike_station.uid }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
